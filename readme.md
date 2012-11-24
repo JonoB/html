@@ -9,7 +9,11 @@ A port of Laravel 3's HTML class. Made to work with Laravel 4.
 add `"meido/html": ">=1.0.0"` to the `require` section of your composer.json so that it should look something the code below (you can, of course, include your own dependencies)
 
 ```composer
+// composer.json
 "require": {
+	...
+	...
+	...
 	"meido/html": ">=1.0.0"
 },
 ```
