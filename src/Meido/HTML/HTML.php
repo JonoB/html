@@ -1,7 +1,6 @@
 <?php namespace Meido\HTML;
 
 use Illuminate\Container;
-use Symfony\Component\HttpFoundation\Request;
 
 class HTML {
 
