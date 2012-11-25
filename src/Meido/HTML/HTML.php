@@ -133,7 +133,7 @@ class HTML {
 	 * @param  array $attributes
 	 * @return string 
 	 */
-	public function link_secure($url, $title = null, $attributes = array())
+	public function linkSecure($url, $title = null, $attributes = array())
 	{
 		return $this->link($url, $title, $attributes, true);
 	}
@@ -147,7 +147,7 @@ class HTML {
 	 * @param  bool $https
 	 * @return string
 	 */
-	public function link_asset($url, $title = null, $attributes = array(), $https = null)
+	public function linkAsset($url, $title = null, $attributes = array(), $https = null)
 	{
 		$url = $this->container->url->to($url, $https);
 
@@ -164,7 +164,7 @@ class HTML {
 	 * @param  array $attributes
 	 * @return string
 	 */
-	public function link_secure_asset($url, $title = null, $attributes = array())
+	public function linkSecureAsset($url, $title = null, $attributes = array())
 	{
 		return $this->link_asset($url, $title, $attributes, true);
 	}
@@ -180,7 +180,7 @@ class HTML {
 	 * @param  array $attributes
 	 * @return string
 	 */
-	public function link_route($name, $title = null, $parameters = array(), $attributes = array())
+	public function linkRoute($name, $title = null, $parameters = array(), $attributes = array())
 	{
 		return $this->link($this->container->url->route($name, $parameters), $title, $attributes);
 	}
@@ -196,7 +196,7 @@ class HTML {
 	 * @param  array $attributes
 	 * @return string
 	 */
-	public function link_action($action, $title = null, $parameters = array(), $attributes = array())
+	public function linkAction($action, $title = null, $parameters = array(), $attributes = array())
 	{
 		return $this->link($this->container->url->action($action, $parameters), $title, $attributes);
 	}
