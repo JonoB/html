@@ -23,7 +23,7 @@ add `"meido/html": ">=1.0.0"` to the `require` section of your composer.json so 
 add the following code to the `providers` section of the `app/config/app.php` file
 
 ```php
-'Meido\HTML\HTMLServiceProvider',
+'Meido\HTML\Providers\HTMLServiceProvider',
 ```
 
 so that it'll look something like the following
@@ -38,7 +38,7 @@ so that it'll look something like the following
 	'Illuminate\Translation\TranslationServiceProvider',
 	'Illuminate\Validation\ValidationServiceProvider',
 	'Illuminate\Foundation\Providers\AliasServiceProvider',
-	'Meido\HTML\HTMLServiceProvider',
+	'Meido\HTML\Providers\HTMLServiceProvider',
 
 ),
 ```
