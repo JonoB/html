@@ -1,5 +1,6 @@
 <?php namespace Meido\HTML\Providers;
 
+use Meido\HTML\HTML;
 use Illuminate\Support\ServiceProvider;
 
 class HTMLServiceProvider extends ServiceProvider {
