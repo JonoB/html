@@ -44,3 +44,7 @@ so that it'll look something like the following
 ```
 
 after that, run `composer install` and start hacking on that beast.
+
+## Thing to note
+
+- Custom HTML macro are not implemented yet at the moment.
