@@ -65,7 +65,7 @@ class HTML {
 	 * Generate a link to a JS file
 	 * 
 	 * @param  string $url
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function script($url, $attributes = array())
@@ -81,7 +81,7 @@ class HTML {
 	 * If no media type is selected, "all" will be used
 	 * 
 	 * @param  string $url
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function style($url, $attributes = array())
@@ -99,7 +99,7 @@ class HTML {
 	 * Generate a HTML span
 	 * 
 	 * @param  string $value
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function span($value, $attributes = array())
@@ -112,7 +112,7 @@ class HTML {
 	 * 
 	 * @param  string $url
 	 * @param  string $title
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @param  bool $https
 	 * @return string
 	 */
@@ -130,7 +130,7 @@ class HTML {
 	 * 
 	 * @param  string $url
 	 * @param  string $title
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string 
 	 */
 	public function linkSecure($url, $title = null, $attributes = array())
@@ -143,7 +143,7 @@ class HTML {
 	 * 
 	 * @param  string $url
 	 * @param  string $title
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @param  bool $https
 	 * @return string
 	 */
@@ -161,7 +161,7 @@ class HTML {
 	 * 
 	 * @param  string $url
 	 * @param  string $title
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function linkSecureAsset($url, $title = null, $attributes = array())
@@ -176,8 +176,8 @@ class HTML {
 	 * 
 	 * @param  string $name
 	 * @param  string $title
-	 * @param  array $parameters
-	 * @param  array $attributes
+	 * @param  array  $parameters
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function linkRoute($name, $title = null, $parameters = array(), $attributes = array())
@@ -192,8 +192,8 @@ class HTML {
 	 * 
 	 * @param  string $action
 	 * @param  string $title
-	 * @param  array $parameters
-	 * @param  array $attributes
+	 * @param  array  $parameters
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function linkAction($action, $title = null, $parameters = array(), $attributes = array())
@@ -208,7 +208,7 @@ class HTML {
 	 *
 	 * @param  string $email
 	 * @param  string $title
-	 * @param  array $attributes
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function mailto($email, $title = null, $attributes = array())
@@ -336,7 +336,7 @@ class HTML {
 	/**
 	 * Build a list of HTML attributes from an array
 	 * 
-	 * @param  array $attributes 
+	 * @param  array  $attributes 
 	 * @return string
 	 */
 	public function attributes($attributes)
