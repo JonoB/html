@@ -245,7 +245,7 @@ class HTML {
 	{
 		$attributes['alt'] = $alt;
 
-		return '<img src="'.$this->app->url->asset($url).'"'.$this->attributes($attributes).'>';
+		return '<img src="'.$this->app->url->to($url).'"'.$this->attributes($attributes).'>';
 	}
 
 	/**
