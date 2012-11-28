@@ -166,7 +166,7 @@ class HTML {
 	 */
 	public function linkSecureAsset($url, $title = null, $attributes = array())
 	{
-		return $this->link_asset($url, $title, $attributes, true);
+		return $this->linkAsset($url, $title, $attributes, true);
 	}
 
 	/**
