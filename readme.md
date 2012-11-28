@@ -1,5 +1,7 @@
 # Meido HTML
 
+[![Build Status](https://secure.travis-ci.org/meido/html.png?branch=master)](https://travis-ci.org/meido/html)
+
 A port of Laravel 3's HTML class. Made to work with Laravel 4.
 
 ## Usage
