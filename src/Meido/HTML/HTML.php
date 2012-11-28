@@ -1,6 +1,6 @@
 <?php namespace Meido\HTML;
 
-use Illuminate\Container;
+use Illuminate\Foundation\Application;
 
 class HTML {
 
@@ -12,14 +12,14 @@ class HTML {
 	protected $encoding = 'utf-8';
 
 	/**
-	 * The inversion of control container instance
-	 * @var Illuminate\Container
+	 * The app instance
+	 * @var Illuminate\Foundation\Application
 	 */
-	protected $container;
+	protected $app;
 
-	public function __construct(Container $container = null)
+	public function __construct(Application $app = null)
 	{
-		$this->container = $container;
+		$this->app = $app;
 	}
 
 	/**
@@ -70,7 +70,7 @@ class HTML {
 	 */
 	public function script($url, $attributes = array())
 	{
-		$url = $this->container->url->to($url);
+		$url = $this->app->url->to($url);
 
 		return '<script src="'.$url.'"'.$this->attributes($attributes).'></script>'.PHP_EOL;
 	}
@@ -90,7 +90,7 @@ class HTML {
 
 		$attributes = $attributes + $defaults;
 
-		$url = $this->container->url->to($url);
+		$url = $this->app->url->to($url);
 
 		return '<link href="'.$url.'"'.$this->attributes($attributes).'>'.PHP_EOL;
 	}
@@ -118,7 +118,7 @@ class HTML {
 	 */
 	public function link($url, $title = null, $attributes = array(), $https = null)
 	{
-		$url = $this->container->url->to($url, $https);
+		$url = $this->app->url->to($url, $https);
 
 		if (is_null($title)) $title = $url;
 
@@ -149,7 +149,7 @@ class HTML {
 	 */
 	public function linkAsset($url, $title = null, $attributes = array(), $https = null)
 	{
-		$url = $this->container->url->to($url, $https);
+		$url = $this->app->url->to($url, $https);
 
 		if (is_null($title)) $title = $url;
 
@@ -182,7 +182,7 @@ class HTML {
 	 */
 	public function linkRoute($name, $title = null, $parameters = array(), $attributes = array())
 	{
-		return $this->link($this->container->url->route($name, $parameters), $title, $attributes);
+		return $this->link($this->app->url->route($name, $parameters), $title, $attributes);
 	}
 
 	/**
@@ -198,7 +198,7 @@ class HTML {
 	 */
 	public function linkAction($action, $title = null, $parameters = array(), $attributes = array())
 	{
-		return $this->link($this->container->url->action($action, $parameters), $title, $attributes);
+		return $this->link($this->app->url->action($action, $parameters), $title, $attributes);
 	}
 
 	/**
@@ -245,7 +245,7 @@ class HTML {
 	{
 		$attributes['alt'] = $alt;
 
-		return '<img src="'.$this->container->url->asset($url).'"'.$this->attributes($attributes).'>';
+		return '<img src="'.$this->app->url->asset($url).'"'.$this->attributes($attributes).'>';
 	}
 
 	/**
