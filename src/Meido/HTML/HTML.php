@@ -139,24 +139,6 @@ class HTML {
 	}
 
 	/**
-	 * Generate a HTML link to an asset
-	 * 
-	 * @param  string $url
-	 * @param  string $title
-	 * @param  array  $attributes
-	 * @param  bool $https
-	 * @return string
-	 */
-	public function linkAsset($url, $title = null, $attributes = array(), $https = null)
-	{
-		$url = $this->app->url->to($url, $https);
-
-		if (is_null($title)) $title = $url;
-
-		return '<a href="'.$url.'"'.$this->attributes($attributes).'>'.$this->entities($title).'</a>';
-	}
-
-	/**
 	 * Generate a HTTPS HTML link to an asset
 	 * 
 	 * @param  string $url
