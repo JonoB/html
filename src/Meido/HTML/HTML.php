@@ -118,7 +118,7 @@ class HTML {
 	 */
 	public function link($url, $title = null, $attributes = array(), $https = null)
 	{
-		$url = $this->app->url->to($url, $https);
+		$url = $this->app->url->to($url, array(), $https);
 
 		if (is_null($title)) $title = $url;
 
