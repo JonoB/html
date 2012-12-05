@@ -12,14 +12,14 @@ class HTML {
 	protected $encoding = 'utf-8';
 
 	/**
-	 * The app instance
-	 * @var Illuminate\Foundation\Application
+	 * The url generator instance
+	 * @var Illuminate\Routing\UrlGenerator
 	 */
-	protected $app;
+	protected $url;
 
 	public function __construct(Application $app = null)
 	{
-		$this->app = $app;
+		$this->url = $app->url;
 	}
 
 	/**
@@ -70,7 +70,7 @@ class HTML {
 	 */
 	public function script($url, $attributes = array())
 	{
-		$url = $this->app->url->to($url);
+		$url = $this->url->to($url);
 
 		return '<script src="'.$url.'"'.$this->attributes($attributes).'></script>'.PHP_EOL;
 	}
@@ -90,7 +90,7 @@ class HTML {
 
 		$attributes = $attributes + $defaults;
 
-		$url = $this->app->url->to($url);
+		$url = $this->url->to($url);
 
 		return '<link href="'.$url.'"'.$this->attributes($attributes).'>'.PHP_EOL;
 	}
@@ -113,12 +113,12 @@ class HTML {
 	 * @param  string $url
 	 * @param  string $title
 	 * @param  array  $attributes
-	 * @param  bool $https
+	 * @param  bool   $https
 	 * @return string
 	 */
-	public function link($url, $title = null, $attributes = array(), $https = null)
+	public function to($url, $title = null, $attributes = array(), $parameters = array(), $https = null)
 	{
-		$url = $this->app->url->to($url, array(), $https);
+		$url = $this->url->to($url, $parameters, $https);
 
 		if (is_null($title)) $title = $url;
 
@@ -133,9 +133,27 @@ class HTML {
 	 * @param  array  $attributes
 	 * @return string 
 	 */
-	public function linkSecure($url, $title = null, $attributes = array())
+	public function secure($url, $title = null, $parameters = array(), $attributes = array())
 	{
-		return $this->link($url, $title, $attributes, true);
+		return $this->to($url, $title, $attributes, $parameters, true);
+	}
+
+	/**
+	 * Generate a HTML link to an asset
+	 * 
+	 * @param  string $url
+	 * @param  string $title
+	 * @param  array  $attributes
+	 * @param  bool   $https
+	 * @return string
+	 */
+	public function asset($url, $title = null, $attributes = array(), $https = null)
+	{
+		$url = $this->url->asset($url, $https);
+
+		if (is_null($title)) $title = $url;
+
+		return '<a href="'.$url.'"'.$this->attributes($attributes).'>'.$this->entities($title).'</a>';
 	}
 
 	/**
@@ -144,11 +162,12 @@ class HTML {
 	 * @param  string $url
 	 * @param  string $title
 	 * @param  array  $attributes
+	 * @param  bool   $https
 	 * @return string
 	 */
-	public function linkSecureAsset($url, $title = null, $attributes = array())
+	public function secureAsset($url, $title = null, $attributes = array())
 	{
-		return $this->linkAsset($url, $title, $attributes, true);
+		return $this->asset($url, $title, $attributes, true);
 	}
 
 	/**
@@ -162,9 +181,9 @@ class HTML {
 	 * @param  array  $attributes
 	 * @return string
 	 */
-	public function linkRoute($name, $title = null, $parameters = array(), $attributes = array())
+	public function route($name, $title = null, $parameters = array(), $attributes = array(), $absolute = true)
 	{
-		return $this->link($this->app->url->route($name, $parameters), $title, $attributes);
+		return $this->to($this->url->route($name, $parameters, $absolute), $title, $attributes);
 	}
 
 	/**
@@ -178,9 +197,9 @@ class HTML {
 	 * @param  array  $attributes
 	 * @return string
 	 */
-	public function linkAction($action, $title = null, $parameters = array(), $attributes = array())
+	public function action($action, $title = null, $parameters = array(), $attributes = array(), $absolute = true)
 	{
-		return $this->link($this->app->url->action($action, $parameters), $title, $attributes);
+		return $this->to($this->url->action($action, $parameters, $absolute), $title, $attributes);
 	}
 
 	/**
@@ -223,11 +242,13 @@ class HTML {
 	 * @param  array  $attributes
 	 * @return string
 	 */
-	public function image($url, $alt = '', $attributes = array())
+	public function image($url, $alt = null, $attributes = array())
 	{
+		if (is_null($alt)) $alt = $url;
+
 		$attributes['alt'] = $alt;
 
-		return '<img src="'.$this->app->url->to($url).'"'.$this->attributes($attributes).'>';
+		return '<img src="'.$this->url->to($url).'"'.$this->attributes($attributes).'>';
 	}
 
 	/**
