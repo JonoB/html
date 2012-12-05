@@ -69,10 +69,10 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function testGeneratingLink()
 	{
-		$html1 = $this->app->html->link('foo');
-		$html2 = $this->app->html->link('foo', 'Foobar');
-		$html3 = $this->app->html->link('foo', 'Foobar', array('class' => 'btn'));
-		$html4 = $this->app->html->link('http://google.com', 'Google');
+		$html1 = $this->app->html->to('foo');
+		$html2 = $this->app->html->to('foo', 'Foobar');
+		$html3 = $this->app->html->to('foo', 'Foobar', array('class' => 'btn'));
+		$html4 = $this->app->html->to('http://google.com', 'Google');
 
 		$this->assertEquals('<a href="http://localhost/foo">http://localhost/foo</a>', $html1);
 		$this->assertEquals('<a href="http://localhost/foo">Foobar</a>', $html2);
@@ -87,10 +87,10 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function testGeneratingLinkToSecure()
 	{
-		$html1 = $this->app->html->linkSecure('foo');
-		$html2 = $this->app->html->linkSecure('foo', 'Foobar');
-		$html3 = $this->app->html->linkSecure('foo', 'Foobar', array('class' => 'btn'));
-		$html4 = $this->app->html->linkSecure('http://google.com', 'Google');
+		$html1 = $this->app->html->secure('foo');
+		$html2 = $this->app->html->secure('foo', 'Foobar');
+		$html3 = $this->app->html->secure('foo', 'Foobar', array(), array('class' => 'btn'));
+		$html4 = $this->app->html->secure('http://google.com', 'Google');
 
 		$this->assertEquals('<a href="https://localhost/foo">https://localhost/foo</a>', $html1);
 		$this->assertEquals('<a href="https://localhost/foo">Foobar</a>', $html2);
@@ -105,10 +105,10 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function testGeneratingAssetLink()
 	{
-		$html1 = $this->app->html->link('foo.css');
-		$html2 = $this->app->html->link('foo.css', 'Foobar');
-		$html3 = $this->app->html->link('foo.css', 'Foobar', array('class' => 'btn'));
-		$html4 = $this->app->html->link('http://google.com/images.jpg', 'Google');
+		$html1 = $this->app->html->asset('foo.css');
+		$html2 = $this->app->html->asset('foo.css', 'Foobar');
+		$html3 = $this->app->html->asset('foo.css', 'Foobar', array('class' => 'btn'));
+		$html4 = $this->app->html->asset('http://google.com/images.jpg', 'Google');
 
 		$this->assertEquals('<a href="http://localhost/foo.css">http://localhost/foo.css</a>', $html1);
 		$this->assertEquals('<a href="http://localhost/foo.css">Foobar</a>', $html2);
@@ -123,10 +123,10 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function testGeneratingAssetLinkToSecure()
 	{
-		$html1 = $this->app->html->linkSecure('foo.css');
-		$html2 = $this->app->html->linkSecure('foo.css', 'Foobar');
-		$html3 = $this->app->html->linkSecure('foo.css', 'Foobar', array('class' => 'btn'));
-		$html4 = $this->app->html->linkSecure('http://google.com/images.jpg', 'Google');
+		$html1 = $this->app->html->secureAsset('foo.css');
+		$html2 = $this->app->html->secureAsset('foo.css', 'Foobar');
+		$html3 = $this->app->html->secureAsset('foo.css', 'Foobar', array('class' => 'btn'));
+		$html4 = $this->app->html->secureAsset('http://google.com/images.jpg', 'Google');
 
 		$this->assertEquals('<a href="https://localhost/foo.css">https://localhost/foo.css</a>', $html1);
 		$this->assertEquals('<a href="https://localhost/foo.css">Foobar</a>', $html2);
@@ -143,9 +143,9 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 	{
 		$this->app->router->get('dashboard', array('as' => 'foo'));
 
-		$html1 = $this->app->html->linkRoute('foo');
-		$html2 = $this->app->html->linkRoute('foo', 'Foobar');
-		$html3 = $this->app->html->linkRoute('foo', 'Foobar', array(), array('class' => 'btn'));
+		$html1 = $this->app->html->route('foo');
+		$html2 = $this->app->html->route('foo', 'Foobar');
+		$html3 = $this->app->html->route('foo', 'Foobar', array(), array('class' => 'btn'));
 
 		$this->assertEquals('<a href="http://localhost/dashboard">http://localhost/dashboard</a>', $html1);
 		$this->assertEquals('<a href="http://localhost/dashboard">Foobar</a>', $html2);
@@ -161,9 +161,9 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 	{
 		$this->app->router->get('foo/bar', 'foo@bar');
 
-		$html1 = $this->app->html->linkAction('foo@bar');
-		$html2 = $this->app->html->linkAction('foo@bar', 'Foobar');
-		$html3 = $this->app->html->linkAction('foo@bar', 'Foobar', array(), array('class' => 'btn'));
+		$html1 = $this->app->html->action('foo@bar');
+		$html2 = $this->app->html->action('foo@bar', 'Foobar');
+		$html3 = $this->app->html->action('foo@bar', 'Foobar', array(), array('class' => 'btn'));
 
 		$this->assertEquals('<a href="http://localhost/foo/bar">http://localhost/foo/bar</a>', $html1);
 		$this->assertEquals('<a href="http://localhost/foo/bar">Foobar</a>', $html2);
@@ -227,7 +227,7 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 		$html3 = $this->app->html->image('foo.jpg', 'Foobar', array('class' => 'btn'));
 		$html4 = $this->app->html->image('http://google.com/images.jpg', 'Google');
 
-		$this->assertEquals('<img src="http://localhost/foo.jpg" alt="">', $html1);
+		$this->assertEquals('<img src="http://localhost/foo.jpg" alt="foo.jpg">', $html1);
 		$this->assertEquals('<img src="http://localhost/foo.jpg" alt="Foobar">', $html2);
 		$this->assertEquals('<img src="http://localhost/foo.jpg" class="btn" alt="Foobar">', $html3);
 		$this->assertEquals('<img src="http://google.com/images.jpg" alt="Google">', $html4);
