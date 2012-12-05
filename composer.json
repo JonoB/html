@@ -20,5 +20,5 @@
             "Meido\\HTML": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
