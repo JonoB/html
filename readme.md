@@ -2,11 +2,13 @@
 
 A port of Laravel 3's HTML class. Made to work with Laravel 4.
 
-- [Usage][usage]
-- [Changelog][changelog]
-- [Things To Note][things-to-note]
+[Usage](https://github.com/meido/html#usage)
 
-## Usage [usage]
+[Changelog](https://github.com/meido/html#changelog)
+
+[Things To Note](https://github.com/meido/html#things-to-note)
+
+## Usage
 
 ### Composer Side
 
