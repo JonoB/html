@@ -71,7 +71,7 @@ so that it'll look something like the following
 
 after that, run `composer install` and start hacking on that beast.
 
-## Changelog [changelog]
+## Changelog
 
 ### 1.0.5
 - added changelog section.
@@ -97,6 +97,6 @@ after that, run `composer install` and start hacking on that beast.
 ### 1.0.0
 - tagged for stable.
 
-## Things to note [things-to-note]
+## Things to note
 
 - Custom HTML macro are not supported yet at this time.
