@@ -79,11 +79,11 @@ after that, run `composer install` and start hacking on that beast.
 
 ### 1.0.4
 - some API changes are made to follow simple function naming convention in laravel.
--- `HTML::link` are now `HTML::to`
--- `HTML::linkSecure` are now `HTML::secure`
--- `HTML::linkRoute` are now `HTML::route`
--- `HTML::linkAction` are now `HTML::action`
--- `HTML::asset` and `HTML::secureAsset` are added back
+	- `HTML::link` are now `HTML::to`
+	- `HTML::linkSecure` are now `HTML::secure`
+	- `HTML::linkRoute` are now `HTML::route`
+	- `HTML::linkAction` are now `HTML::action`
+	- `HTML::asset` and `HTML::secureAsset` are added back
 
 ### 1.0.3
 - updated `composer.json`'s `require` section to stable version. Again my bad.
