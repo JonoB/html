@@ -2,11 +2,11 @@
 
 A port of Laravel 3's HTML class. Made to work with Laravel 4.
 
-- [Usage](https://github.com/meido/html#usage)
-- [Changelog](https://github.com/meido/html#changelog)
-- [Things To Note](https://github.com/meido/html#things-to-note)
+- [Usage][usage]
+- [Changelog][changelog]
+- [Things To Note][things-to-note]
 
-## Usage
+## Usage [usage]
 
 ### Composer Side
 
@@ -69,7 +69,7 @@ so that it'll look something like the following
 
 after that, run `composer install` and start hacking on that beast.
 
-## Changelog
+## Changelog [changelog]
 
 ### 1.0.5
 - added changelog section.
@@ -95,6 +95,6 @@ after that, run `composer install` and start hacking on that beast.
 ### 1.0.0
 - tagged for stable.
 
-## Things to note
+## Things to note [things-to-note]
 
 - Custom HTML macro are not supported yet at this time.
