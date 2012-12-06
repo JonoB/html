@@ -71,26 +71,17 @@ after that, run `composer install` and start hacking on that beast.
 
 ## Changelog
 
-### 1.0.5
-- added changelog section.
-- I forgot to update readme.
-
-### 1.0.4
+### 1.0.1
+- updated `composer.json` to stable channel.
+- updated `composer.json`'s `require` section to stable version.
 - some API changes are made to follow simple function naming convention in laravel.
 	- `HTML::link` are now `HTML::to`
 	- `HTML::linkSecure` are now `HTML::secure`
 	- `HTML::linkRoute` are now `HTML::route`
 	- `HTML::linkAction` are now `HTML::action`
 	- `HTML::asset` and `HTML::secureAsset` are added back
-
-### 1.0.3
-- updated `composer.json`'s `require` section to stable version. Again my bad.
-
-### 1.0.2
-- updated readme. I know this shouldn't be tagged but I'm still learning git. My bad here.
-
-### 1.0.1
-- updated `composer.json` to stable channel.
+- added changelog section.
+- updated Facade namespace.
 
 ### 1.0.0
 - tagged for stable.
