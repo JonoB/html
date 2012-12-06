@@ -1,6 +1,6 @@
 <?php namespace Meido\HTML\Facades;
 
-use Illuminate\Support\Facade;
+use Illuminate\Support\Facades\Facade;
 
 class HTML extends Facade {
 
