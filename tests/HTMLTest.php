@@ -16,7 +16,7 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 	{
 		$this->app = new Application;
 		$this->app['request'] = Request::create('/', 'GET');
-		$this->app['html'] = new HTML($this->app);
+		$this->app['html'] = new HTML($this->app->url);
 	}
 
 	public function tearDown()

@@ -1,6 +1,6 @@
 <?php namespace Meido\HTML;
 
-use Illuminate\Foundation\Application;
+use Illuminate\Routing\UrlGenerator;
 
 class HTML {
 
@@ -17,9 +17,9 @@ class HTML {
 	 */
 	protected $url;
 
-	public function __construct(Application $app = null)
+	public function __construct(UrlGenerator $urlGenerator = null)
 	{
-		$this->url = $app->url;
+		$this->url = $urlGenerator;
 	}
 
 	/**
