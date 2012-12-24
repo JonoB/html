@@ -13,6 +13,7 @@ class HTML {
 
 	/**
 	 * The url generator instance
+	 * 
 	 * @var Illuminate\Routing\UrlGenerator
 	 */
 	protected $url;
@@ -363,12 +364,6 @@ class HTML {
 	}
 
 	/**
-	* Obfuscate a string to prevent spam-bots from sniffing it.
-	*
-	* @param string $value
-	* @return string
-	*/
-	/**
 	 * Obfuscate a string to prevent spam-bots from sniffing it
 	 * 
 	 * @param  string $value 
@@ -399,6 +394,11 @@ class HTML {
 		}
 
 		return $safe;
+	}
+
+	public function getUrlGenerator()
+	{
+		return $this->url;
 	}
 
 }
