@@ -13,7 +13,6 @@
         "illuminate/support": "1.2.*"
     },
     "require-dev": {
-        "illuminate/foundation": "1.2.*",
         "mockery/mockery": "0.7.2"
     },
     "autoload": {
