@@ -83,6 +83,10 @@ after that, run `composer install` and start hacking on that beast.
 	- `HTML::asset` and `HTML::secureAsset` are added back
 - added changelog section. (1.0.4)
 - updated Facade namespace. (1.0.5)
+- some tweaks are made. (1.0.6)
+	- since `HTML` only requires `UrlGenerator`, parameters passed are updated.
+	- hence, `HTML` would not be depending on `illuminate/foundation` in which none of it is actually used and will be using `illuminate/routing` instead where `UrlGenerator` resides.
+- version bump. (1.0.7)
 
 ## Things to note
 
