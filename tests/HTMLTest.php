@@ -10,21 +10,21 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 
 	/**
 	 * The router instance
-	 * 
+	 *
 	 * @var Illuminate\Routing\Router
 	 */
 	protected $router;
 
 	/**
 	 * The url generator instance
-	 * 
+	 *
 	 * @var Illuminate\Routing\UrlGenerator
 	 */
 	protected $url;
 
 	/**
 	 * The HTML class instance
-	 * 
+	 *
 	 * @var Meido\HTML\HTML
 	 */
 	protected $html;
@@ -254,6 +254,15 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('<img src="http://localhost/foo.jpg" alt="Foobar">', $html2);
 		$this->assertEquals('<img src="http://localhost/foo.jpg" class="btn" alt="Foobar">', $html3);
 		$this->assertEquals('<img src="http://google.com/images.jpg" alt="Google">', $html4);
+	}
+
+	public function testRegisteringCustomMacros()
+	{
+		$this->html->macro('unfooer', function($string) {
+			return str_replace('foo', 'bar', $string);
+		});
+
+		$this->assertEquals('barbar', $this->html->unfooer('foofoo'));
 	}
 
 }
