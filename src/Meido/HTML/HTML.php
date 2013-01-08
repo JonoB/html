@@ -6,14 +6,14 @@ class HTML {
 
 	/**
 	 * The encoding to use
-	 * 
+	 *
 	 * @var string
 	 */
 	protected $encoding = 'utf-8';
 
 	/**
 	 * The url generator instance
-	 * 
+	 *
 	 * @var Illuminate\Routing\UrlGenerator
 	 */
 	protected $url;
@@ -27,7 +27,7 @@ class HTML {
 	 * Convert HTML characters to HTML entities
 	 *
 	 * The encoding in $encoding will be used
-	 * 
+	 *
 	 * @param  string $value
 	 * @return string
 	 */
@@ -40,8 +40,8 @@ class HTML {
 	 * Convert HTML entities to HTML characters
 	 *
 	 * The encoding in $encoding will be used
-	 * 
-	 * @param  string $value 
+	 *
+	 * @param  string $value
 	 * @return string
 	 */
 	public function decode($value)
@@ -53,7 +53,7 @@ class HTML {
 	 * Convert HTML special characters
 	 *
 	 * The encoding in $encoding will be used
-	 * 
+	 *
 	 * @param  string $value
 	 * @return string
 	 */
@@ -64,7 +64,7 @@ class HTML {
 
 	/**
 	 * Generate a link to a JS file
-	 * 
+	 *
 	 * @param  string $url
 	 * @param  array  $attributes
 	 * @return string
@@ -80,7 +80,7 @@ class HTML {
 	 * Generate a link to a CSS file.
 	 *
 	 * If no media type is selected, "all" will be used
-	 * 
+	 *
 	 * @param  string $url
 	 * @param  array  $attributes
 	 * @return string
@@ -98,7 +98,7 @@ class HTML {
 
 	/**
 	 * Generate a HTML span
-	 * 
+	 *
 	 * @param  string $value
 	 * @param  array  $attributes
 	 * @return string
@@ -110,7 +110,7 @@ class HTML {
 
 	/**
 	 * Generate a HTML link
-	 * 
+	 *
 	 * @param  string $url
 	 * @param  string $title
 	 * @param  array  $attributes
@@ -128,11 +128,11 @@ class HTML {
 
 	/**
 	 * Generate a HTTPS HTML link
-	 * 
+	 *
 	 * @param  string $url
 	 * @param  string $title
 	 * @param  array  $attributes
-	 * @return string 
+	 * @return string
 	 */
 	public function secure($url, $title = null, $parameters = array(), $attributes = array())
 	{
@@ -141,7 +141,7 @@ class HTML {
 
 	/**
 	 * Generate a HTML link to an asset
-	 * 
+	 *
 	 * @param  string $url
 	 * @param  string $title
 	 * @param  array  $attributes
@@ -159,7 +159,7 @@ class HTML {
 
 	/**
 	 * Generate a HTTPS HTML link to an asset
-	 * 
+	 *
 	 * @param  string $url
 	 * @param  string $title
 	 * @param  array  $attributes
@@ -175,7 +175,7 @@ class HTML {
 	 * Generate a HTML link to a route
 	 *
 	 * An array of parameters may be specified to fill in URI segment wildcards.
-	 * 
+	 *
 	 * @param  string $name
 	 * @param  string $title
 	 * @param  array  $parameters
@@ -191,7 +191,7 @@ class HTML {
 	 * Generate a HTML link to a controller action
 	 *
 	 * An array of parameters may be specified to fill in URI segment wildcards.
-	 * 
+	 *
 	 * @param  string $action
 	 * @param  string $title
 	 * @param  array  $parameters
@@ -314,7 +314,7 @@ class HTML {
 
 		return '<'.$type.$this->attributes($attributes).'>'.$html.'</'.$type.'>';
 	}
-	
+
 	/**
 	 * Generate a definition list.
 	 *
@@ -327,20 +327,20 @@ class HTML {
 		$html = '';
 
 		if (count($list) == 0) return $html;
-		
+
 		foreach ($list as $term => $description)
 		{
 			$html .= '<dt>'.$this->entities($term).'</dt>';
 			$html .= '<dd>'.$this->entities($description).'</dd>';
 		}
-		
+
 		return '<dl'.$this->attributes($attributes).'>'.$html.'</dl>';
 	}
 
 	/**
 	 * Build a list of HTML attributes from an array
-	 * 
-	 * @param  array  $attributes 
+	 *
+	 * @param  array  $attributes
 	 * @return string
 	 */
 	public function attributes($attributes)
@@ -365,8 +365,8 @@ class HTML {
 
 	/**
 	 * Obfuscate a string to prevent spam-bots from sniffing it
-	 * 
-	 * @param  string $value 
+	 *
+	 * @param  string $value
 	 * @return string
 	 */
 	protected function obfuscate($value)
