@@ -1,27 +1,35 @@
 <?php namespace Meido\HTML;
 
-use Illuminate\Routing\UrlGenerator;
+use Illuminate\Foundation\Application;
 
 class HTML {
 
 	/**
 	 * The encoding to use
-	 * 
+	 *
 	 * @var string
 	 */
 	protected $encoding = 'utf-8';
 
 	/**
-	 * The url generator instance
-	 * 
-	 * @var Illuminate\Routing\UrlGenerator
+	 * The app instance
+	 * @var Illuminate\Foundation\Application
 	 */
-	protected $url;
+	protected $app;
 
-	public function __construct(UrlGenerator $urlGenerator = null)
+	public function __construct(Application $app = null)
 	{
-		$this->url = $urlGenerator;
+		$this->app = $app;
 	}
+
+	/**
+	 * Get the UrlGenerator
+	 * @return Illuminate\Routing\UrlGenerator
+	 */
+	public function getUrlGenerator(){
+		return $this->app->url;
+	}
+
 
 	/**
 	 * Convert HTML characters to HTML entities
