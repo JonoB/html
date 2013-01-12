@@ -21,7 +21,7 @@ class HTMLServiceProvider extends ServiceProvider {
 	{
 		$this->app['html'] = $this->app->share(function($app)
 		{
-			return new HTML($app['url']);
+			return new HTML($app);
 		});
 	}
 
