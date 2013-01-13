@@ -10,7 +10,7 @@ A port of Laravel 3's HTML class. Made to work with Laravel 4.
 
 ### Composer Side
 
-add `"meido/html": "1.0.*"` to the `require` section of your `composer.json` so that it should look something the code below (you can, of course, include your own dependencies)
+add `"meido/html": "1.1.*"` to the `require` section of your `composer.json` so that it should look something the code below (you can, of course, include your own dependencies)
 
 ```composer
 ...
@@ -20,7 +20,7 @@ add `"meido/html": "1.0.*"` to the `require` section of your `composer.json` so 
 	...
 	...
 	...
-	"meido/html": "1.0.*"
+	"meido/html": "1.1.*"
 },
 ...
 ...
@@ -32,7 +32,7 @@ add `"meido/html": "1.0.*"` to the `require` section of your `composer.json` so 
 add the following code to the `providers` section of the `app/config/app.php` file
 
 ```php
-'Meido\HTML\Providers\HTMLServiceProvider',
+'Meido\HTML\HTMLServiceProvider',
 ```
 
 so that it'll look something like the following
@@ -43,7 +43,7 @@ so that it'll look something like the following
 	...
 	...
 	...
-	'Meido\HTML\Providers\HTMLServiceProvider',
+	'Meido\HTML\HTMLServiceProvider',
 
 ),
 ```
@@ -51,7 +51,7 @@ so that it'll look something like the following
 and add the following code to the `aliases` section of the `app/config/app.php` file
 
 ```php
-'HTML' => 'Meido\HTML\Facades\HTML',
+'HTML' => 'Meido\HTML\HTMLFacade',
 ```
 
 so that it'll look something like the following
@@ -62,7 +62,7 @@ so that it'll look something like the following
 	...
 	...
 	...
-	'HTML'       => 'Meido\HTML\Facades\HTML',
+	'HTML'       => 'Meido\HTML\HTMLFacade',
 	
 ),
 ```
@@ -70,6 +70,11 @@ so that it'll look something like the following
 after that, run `composer install` and start hacking on that beast.
 
 ## Changelog
+
+### 1.1.*
+- below are the changes made in 1.1.0
+	- `Facade` and `ServiceProvider` are moved a folder up following Laravel 4's convention of developing packages.
+	- dependencies version are changed to `4.0.x`
 
 ### 1.0.*
 - tagged for stable. (1.0.0)
