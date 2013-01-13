@@ -10,21 +10,21 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 
 	/**
 	 * The router instance
-	 * 
+	 *
 	 * @var Illuminate\Routing\Router
 	 */
 	protected $router;
 
 	/**
 	 * The url generator instance
-	 * 
+	 *
 	 * @var Illuminate\Routing\UrlGenerator
 	 */
 	protected $url;
 
 	/**
 	 * The HTML class instance
-	 * 
+	 *
 	 * @var Meido\HTML\HTML
 	 */
 	protected $html;
