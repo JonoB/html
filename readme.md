@@ -63,7 +63,7 @@ so that it'll look something like the following
 	...
 	...
 	'HTML'       => 'Meido\HTML\HTMLFacade',
-	
+
 ),
 ```
 
