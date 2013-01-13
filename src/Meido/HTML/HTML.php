@@ -36,23 +36,6 @@ class HTML {
 	}
 
 	/**
-	 * Dynamically handle calls to custom macros.
-	 *
-	 * @param  string  $method
-	 * @param  array   $parameters
-	 *
-	 * @return mixed
-	 */
-	public function __call($method, $parameters)
-	{
-		if (isset($this->macros[$method])) {
-      return call_user_func_array($this->macros[$method], $parameters);
-    }
-
-    throw new \Exception("Method [$method] does not exist.");
-	}
-
-	/**
 	 * Register a new macro with the HTML class
 	 *
 	 * @param string   $name     Its name
@@ -441,6 +424,23 @@ class HTML {
 	public function getUrlGenerator()
 	{
 		return $this->url;
+	}
+
+	/**
+	 * Dynamically handle calls to custom macros.
+	 *
+	 * @param  string  $method
+	 * @param  array   $parameters
+	 *
+	 * @return mixed
+	 */
+	public function __call($method, $parameters)
+	{
+		if (isset($this->macros[$method])) {
+			return call_user_func_array($this->macros[$method], $parameters);
+		}
+
+		throw new \Exception("Method [$method] does not exist.");
 	}
 
 }
