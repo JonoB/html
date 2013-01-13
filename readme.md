@@ -75,6 +75,7 @@ after that, run `composer install` and start hacking on that beast.
 - below are the changes made in 1.1.0
 	- `Facade` and `ServiceProvider` are moved a folder up following Laravel 4's convention of developing packages.
 	- dependencies version are changed to `4.0.x`
+	- macro are now available thanks to [Maxime Fabre](https://github.com/Anahkiasen)
 
 ### 1.0.*
 - tagged for stable. (1.0.0)
@@ -92,7 +93,3 @@ after that, run `composer install` and start hacking on that beast.
 	- since `HTML` only requires `UrlGenerator`, parameters passed are updated.
 	- hence, `HTML` would not be depending on `illuminate/foundation` in which none of it is actually used and will be using `illuminate/routing` instead where `UrlGenerator` resides.
 - version bump. (1.0.7)
-
-## Things to note
-
-- Custom HTML macro are not supported yet at this time.
