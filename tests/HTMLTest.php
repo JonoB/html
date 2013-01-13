@@ -256,6 +256,11 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals('<img src="http://google.com/images.jpg" alt="Google">', $html4);
 	}
 
+	/**
+	 * Test registration of macros and function that is registered
+	 *
+	 * @group laravel
+	 */
 	public function testRegisteringCustomMacros()
 	{
 		$this->html->macro('unfooer', function($string) {
