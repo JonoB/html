@@ -9,8 +9,8 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/routing": "dev-master",
-        "illuminate/support": "dev-master"
+        "illuminate/routing": "4.0.x",
+        "illuminate/support": "4.0.x"
     },
     "require-dev": {
         "mockery/mockery": "0.7.2"
