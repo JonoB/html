@@ -18,9 +18,51 @@ class HTML {
 	 */
 	protected $url;
 
+	/**
+	 * Custom macros registered by the user
+	 *
+	 * @var array
+	 */
+	protected $macros = array();
+
+	/**
+	 * Build a new instance of HTML
+	 *
+	 * @param UrlGenerator $urlGenerator
+	 */
 	public function __construct(UrlGenerator $urlGenerator = null)
 	{
 		$this->url = $urlGenerator;
+	}
+
+	/**
+	 * Dynamically handle calls to custom macros.
+	 *
+	 * @param  string  $method
+	 * @param  array   $parameters
+	 *
+	 * @return mixed
+	 */
+	public function __call($method, $parameters)
+	{
+		if (isset($this->macros[$method])) {
+      return call_user_func_array($this->macros[$method], $parameters);
+    }
+
+    throw new \Exception("Method [$method] does not exist.");
+	}
+
+	/**
+	 * Register a new macro with the HTML class
+	 *
+	 * @param string   $name     Its name
+	 * @param Callable $callback A closure to use
+	 *
+	 * @return void
+	 */
+	public function macro($name, $callback)
+	{
+		$this->macros[$name] = $callback;
 	}
 
 	/**
