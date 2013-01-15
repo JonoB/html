@@ -1,6 +1,5 @@
 <?php
 
-use Mockery as m;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
 use Illuminate\Routing\UrlGenerator;
@@ -32,19 +31,11 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * Setup test environtment
 	 */
-	public function setUp()
+	protected function setUp()
 	{
 		$this->router = new Router;
 		$this->url = new UrlGenerator($this->router->getRoutes(), Request::create('/', 'GET'));
 		$this->html = new HTML($this->url);
-	}
-
-	/**
-	 * Destroy test environtment
-	 */
-	public function tearDown()
-	{
-		m::close();
 	}
 
 	/**

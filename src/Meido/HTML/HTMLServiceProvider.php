@@ -10,7 +10,17 @@ class HTMLServiceProvider extends ServiceProvider {
 	 *
 	 * @var bool
 	 */
-	protected $defer = true;
+	protected $defer = false;
+
+	/**
+	 * Bootstrap the application events.
+	 *
+	 * @return void
+	 */
+	public function boot()
+	{
+		$this->package('meido/html');
+	}
 
 	/**
 	 * Register the service provider.
