@@ -71,7 +71,8 @@ after that, run `composer install` and start hacking on that beast.
 ## Changelog
 
 ### 1.1.*
-- Added e() shortcut method helper to HTML::entities()
+- Reverted e() shortcut helper as it's already in the `Illuminate/Support` (1.1.2)
+- Added e() shortcut method helper to HTML::entities() (1.1.1)
 - below are the changes made in 1.1.0
 	- `Facade` and `ServiceProvider` are moved a folder up following Laravel 4's convention of developing packages.
 	- dependencies version are changed to `4.0.x`
