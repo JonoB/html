@@ -13,6 +13,9 @@
         "illuminate/routing": "4.0.x"
     },
     "autoload": {
+    	"files": [
+            "src/Meido/HTML/helpers.php"
+	],
         "classmap": [
             "src/migrations"
         ],
