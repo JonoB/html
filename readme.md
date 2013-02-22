@@ -4,7 +4,6 @@ A port of Laravel 3's HTML class. Made to work with Laravel 4.
 
 - [Usage](https://github.com/meido/html#usage)
 - [Changelog](https://github.com/meido/html#changelog)
-- [Things To Note](https://github.com/meido/html#things-to-note)
 
 ## Usage
 
@@ -72,6 +71,7 @@ after that, run `composer install` and start hacking on that beast.
 ## Changelog
 
 ### 1.1.*
+- Added e() shortcut method helper to HTML::entities()
 - below are the changes made in 1.1.0
 	- `Facade` and `ServiceProvider` are moved a folder up following Laravel 4's convention of developing packages.
 	- dependencies version are changed to `4.0.x`
