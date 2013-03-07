@@ -1,12 +1,6 @@
 {
-    "name": "meido/html",
+    "name": "JonoB/html",
     "description": "A port of Laravel 3's HTML class",
-    "authors": [
-        {
-            "name": "Joni Chandra",
-            "email": "joniliciously@gmail.com"
-        }
-    ],
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.0.x",
@@ -17,7 +11,7 @@
             "src/migrations"
         ],
         "psr-0": {
-            "Meido\\HTML": "src/"
+            "Jonob\\HTML": "src/"
         }
     },
     "minimum-stability": "dev"

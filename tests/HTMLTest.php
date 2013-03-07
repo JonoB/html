@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
 use Illuminate\Routing\UrlGenerator;
-use Meido\HTML\HTML;
+use Jonob\HTML\HTML;
 
 class HTMLTest extends PHPUnit_Framework_TestCase {
 
@@ -24,7 +24,7 @@ class HTMLTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * The HTML class instance
 	 *
-	 * @var Meido\HTML\HTML
+	 * @var Jonob\HTML\HTML
 	 */
 	protected $html;
 

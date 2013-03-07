@@ -1,7 +1,7 @@
-<?php namespace Meido\HTML;
+<?php namespace Jonob\HTML;
 
 use Illuminate\Support\ServiceProvider;
-use Meido\HTML\HTML;
+use Jonob\HTML\HTML;
 
 class HTMLServiceProvider extends ServiceProvider {
 
@@ -19,7 +19,7 @@ class HTMLServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('meido/html');
+		$this->package('jonob/html');
 	}
 
 	/**

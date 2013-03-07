@@ -1,15 +1,17 @@
-# Meido HTML [![Build Status](https://secure.travis-ci.org/meido/html.png?branch=master)](https://travis-ci.org/meido/html)
+# Meido HTML
+
+This library was written by Meido, but is now maintained by JonoB
 
 A port of Laravel 3's HTML class. Made to work with Laravel 4.
 
-- [Usage](https://github.com/meido/html#usage)
-- [Changelog](https://github.com/meido/html#changelog)
+- [Usage](https://github.com/JonoB/html#usage)
+- [Changelog](https://github.com/JonoB/html#changelog)
 
 ## Usage
 
 ### Composer Side
 
-add `"meido/html": "1.1.*"` to the `require` section of your `composer.json` so that it should look something the code below (you can, of course, include your own dependencies)
+add `"jonob/html": "1.1.*"` to the `require` section of your `composer.json` so that it should look something the code below (you can, of course, include your own dependencies)
 
 ```composer
 ...
@@ -19,7 +21,7 @@ add `"meido/html": "1.1.*"` to the `require` section of your `composer.json` so 
 	...
 	...
 	...
-	"meido/html": "1.1.*"
+	"jonob/html": "1.1.*"
 },
 ...
 ...
@@ -31,7 +33,7 @@ add `"meido/html": "1.1.*"` to the `require` section of your `composer.json` so 
 add the following code to the `providers` section of the `app/config/app.php` file
 
 ```php
-'Meido\HTML\HTMLServiceProvider',
+'Jonob\HTML\HTMLServiceProvider',
 ```
 
 so that it'll look something like the following
@@ -42,7 +44,7 @@ so that it'll look something like the following
 	...
 	...
 	...
-	'Meido\HTML\HTMLServiceProvider',
+	'Jonob\HTML\HTMLServiceProvider',
 
 ),
 ```
@@ -50,7 +52,7 @@ so that it'll look something like the following
 and add the following code to the `aliases` section of the `app/config/app.php` file
 
 ```php
-'HTML' => 'Meido\HTML\HTMLFacade',
+'HTML' => 'Jonob\HTML\HTMLFacade',
 ```
 
 so that it'll look something like the following
@@ -61,7 +63,7 @@ so that it'll look something like the following
 	...
 	...
 	...
-	'HTML'       => 'Meido\HTML\HTMLFacade',
+	'HTML'       => 'Jonob\HTML\HTMLFacade',
 
 ),
 ```
