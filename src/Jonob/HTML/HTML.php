@@ -96,7 +96,7 @@ class HTML {
 	 */
 	public function script($url, $attributes = array())
 	{
-		$url = $this->url->to($url);
+		$url = $this->url->asset($url);
 
 		return '<script src="'.$url.'"'.$this->attributes($attributes).'></script>'.PHP_EOL;
 	}
@@ -116,7 +116,7 @@ class HTML {
 
 		$attributes = $attributes + $defaults;
 
-		$url = $this->url->to($url);
+		$url = $this->url->asset($url);
 
 		return '<link href="'.$url.'"'.$this->attributes($attributes).'>'.PHP_EOL;
 	}
