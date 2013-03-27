@@ -9,6 +9,6 @@ class HTMLFacade extends Facade {
 	 *
 	 * @return string
 	 */
-	protected static function getFacadeAccessor() { return 'html'; }
+	protected static function getFacadeAccessor() { return 'jonob/html'; }
 
 }

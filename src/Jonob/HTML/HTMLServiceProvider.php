@@ -29,7 +29,7 @@ class HTMLServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app['html'] = $this->app->share(function($app)
+		$this->app['jonob/html'] = $this->app->share(function($app)
 		{
 			return new HTML($app['url']);
 		});
@@ -42,7 +42,7 @@ class HTMLServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array('html');
+		return array('jonob/html');
 	}
 
 }
